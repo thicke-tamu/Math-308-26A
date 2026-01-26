@@ -1,0 +1,15 @@
+div.container {
+    width: min(100vw, 6in);
+    margin: 0 auto;
+}
+body {
+    margin: 0 0 0 0;
+}
+@media print {
+    write-box > div > * {
+        display: none;
+    }
+    /*write-box > div {
+        border: 1px solid black;
+    }*/
+}
