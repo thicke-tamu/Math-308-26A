@@ -4,6 +4,7 @@ div.container {
 }
 body {
     margin: 0 0 0 0;
+    font-family: sans-serif;
 }
 @media print {
     write-box > div > * {
