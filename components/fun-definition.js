@@ -30,6 +30,7 @@ const html = `
             --title-vertical-offset: calc(var(--title-total-height)*0.5 + var(--box-border-width)*0.5);
             margin: 1em 0;
             padding-top: calc(var(--title-vertical-offset) - var(--box-border-width));
+            break-inside: avoid;
         }
         h6.title {
             position: absolute;

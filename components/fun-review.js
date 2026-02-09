@@ -1,10 +1,10 @@
 // Define class.
-class FunTheorem extends HTMLElement {
+class FunReview extends HTMLElement {
     static observedAttributes = ['title', 'prefix'];
     constructor() {
         super();
         const shadowRoot = this.attachShadow({ mode: 'open' });
-        const template = parsedHtml.getElementById('fun-theorem');
+        const template = parsedHtml.getElementById('fun-review');
         const templateContent = template.content;
         shadowRoot.appendChild(templateContent.cloneNode(true));
     }
@@ -18,14 +18,14 @@ class FunTheorem extends HTMLElement {
 
 // Helper variables.
 const html = `
-<template id="fun-theorem">
+<template id="fun-review">
     <style>
         div.container {
             --box-border-width: 3px;
             --title-vertical-margin: 0.35em;
             --first-and-last-para-margin: 0.7em;
-            --main-color: #4466DD;
-            --second-color: #7799FF;
+            --main-color: #777777;
+            --second-color: #AAAAAA;
             --title-total-height: calc(1lh + var(--title-vertical-margin)*2);
             --title-vertical-offset: calc(var(--title-total-height)*0.5 + var(--box-border-width)*0.5);
             margin: 1em 0;
@@ -61,7 +61,7 @@ const html = `
     </style>
     <div class="container">
         <div class="body">
-            <h6 class="title" id="title">Theorem</h6>
+            <h6 class="title" id="title">Review</h6>
             <div class="holder"><slot></slot></div>
         </div>
     </div>
@@ -83,15 +83,15 @@ function setTitle(el) {
     } else if (prefix == '' && title) {
         headerEl.innerText = `${title}`;
     } else if (!prefix && title) {
-        headerEl.innerText = `Theorem: ${title}`;
+        headerEl.innerText = `Review: ${title}`;
     } else if (!prefix && !title) {
-        headerEl.innerText = `Theorem`;
+        headerEl.innerText = `Review`;
     }
 }
 
 // Add element to the list of customElements.
-customElements.define('fun-theorem', FunTheorem);
+customElements.define('fun-review', FunReview);
 if (!window.chewyCustomElements) {
     window.chewyCustomElements = {};
 }
-window.chewyCustomElements['fun-theorem'] = { isInline: false }
+window.chewyCustomElements['fun-review'] = { isInline: false }
