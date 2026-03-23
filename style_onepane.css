@@ -1,5 +1,5 @@
 div.container {
-    width: min(100vw, 6in);
+    width: min(80vw, 8in);
     margin: 0 auto;
 }
 body {
@@ -9,6 +9,10 @@ body {
 @media print {
     write-box > div > * {
         display: none;
+    }
+    div.container {
+        width: 6in;
+        margin: 0 auto;
     }
     /*write-box > div {
         border: 1px solid black;
